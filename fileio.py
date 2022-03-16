@@ -9,7 +9,23 @@ c = ac.c.to(u.m/u.s).value
 tb = casatools.table()
 ms = casatools.ms()
 
-def import_ms(msfilename, corr=["I"], export_uvtable=True, filename=None):
+def import_ms(msfilename, export_uvtable=True, filename=None):
+    """Import the visibility from a CASA measurement set as 1D arrays using casatools. 
+
+    Parameters
+    ----------
+    msfilename : str
+        The measurement set filename which you want to import.
+    export_uvtable : bool, optional
+        If write the output into a text file (similar to UVTable), by default True
+    filename : str or None, optional
+        The filename of output text file, by default None. Relevant only when export_uvtable=True.
+
+    Returns
+    -------
+    u, v, real, imag, weight, freqs: six 1D numpy array
+        visibility
+    """
 
     ms.open(msfilename)
 
@@ -100,7 +116,22 @@ def import_ms(msfilename, corr=["I"], export_uvtable=True, filename=None):
     return u, v, real, imag, weight, freqs
 
 
-def export_ms(basems, outms, real, imag, weight, corr=["I"]):
+def export_ms(basems, outms, real, imag, weight):
+    """Export the visibility (1D arrays) to a CASA measurement set file
+
+    Parameters
+    ----------
+    basems : str
+        Measurement set filename from which you get the data by import_ms function. Must have the same number of data points as input.
+    outms : str
+        The filename to which you want to export.
+    real : 1D numpy array
+        Real part of the visibility.
+    imag : 1D numpy array
+        Imaginary part of the visibility.
+    weight : 1D numpy array
+        Weight.
+    """
 
     shutil.copytree(basems, outms)
 
@@ -119,7 +150,7 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
     spw_array = []
     for i in spw:
         ms.selectinit(datadescid=int(i))
-        ms.selectpolarization(corr)
+        #ms.selectpolarization(corr)
 
         rec = ms.getdata(["data"])
 
@@ -133,16 +164,13 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
 
         ms.reset()
 
-    #ms.close()
-
     spw_array = np.concatenate(spw_array)
 
     if datasize != np.sum([i for i in ndata.values()]):
         raise ValueError("Data size is not consistent with the base measurement set.")
 
-    # put the data for each spectral window
+    # put the data onto each spectral window
     print("Exporting into {:s}...".format(outms))
-    #ms.open(outms, nomodify=False)
 
     V = real + imag*1.0j
 
@@ -153,7 +181,7 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
 
         rec = ms.getdata(["data", "weight"])
 
-        print(rec["data"].shape, rec["weight"].shape)
+        # print(rec["data"].shape, rec["weight"].shape)
 
         v = V[spw_array == int(i)].reshape(nchan[i], -1)
         w = weight[spw_array == int(i)].reshape(nchan[i], -1)
@@ -170,7 +198,7 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
             rec["data"][0,:,:] = v
             rec["weight"][0,:] = np.mean(w, axis=0)
 
-        print(rec["data"].shape, rec["weight"].shape)
+        # print(rec["data"].shape, rec["weight"].shape)
 
         ms.putdata(rec)
         ms.reset()
@@ -181,33 +209,22 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
 
 
 
-
-
-
-        
-
-
-
-
-
-
 if __name__ == '__main__':
-    import pickle
-    import casatools
-
-    tb = casatools.table()
-
-    # datafilepath = "/raid/work/yamato/edisk_data/analysis_data/"
-    # with open(datafilepath + "L1489IRS_continuum_sampler_threeGaussian.pkl", "rb") as f:
-    #     sampler = pickle.load(f)
-
-    # flat_sample = sampler.get_chain(flat=True)
-
-    # print(flat_sample.shape)
+    import numpy as np
+    # from fileio import export_ms
 
     datafilepath = "/raid/work/yamato/edisk_data/edisk_calibrated_data/"
-    base_ms = datafilepath + "L1489IRS_SB1_continuum.ms"
+    msfilename = datafilepath + "L1489IRS_SB1_continuum.bin_30s.ms"
+    u, v, real, imag, weight, freqs = import_ms(msfilename, export_uvtable=True, filename=msfilename+".uvtab")
 
-    tb.open(base_ms)
+    # MAP_vis = np.load("./L1489IRS_SB1_continuum_PointSource_GaussianRing_Gaussian_MAP_vis.npy")
+
+    export_ms(
+        basems="/raid/work/yamato/edisk_data/edisk_calibrated_data/L1489IRS_SB1_continuum.bin_30s.ms",
+        outms="/raid/work/yamato/edisk_data/edisk_calibrated_data/L1489IRS_SB1_continuum.bin_30s.model.ms",
+        real=real,
+        imag=imag,
+        weight=np.ones(real.shape),
+)
 
     
