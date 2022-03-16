@@ -58,7 +58,7 @@ def import_ms(msfilename, export_uvtable=True, filename=None):
             weight_XX = data[spw]["weight"][0,:]
             weight_YY = data[spw]["weight"][1,:]
             _weight = weight_XX + weight_YY
-            _V = (V_XX * weight_XX + V_YY * weight_YY) / weight
+            _V = (V_XX * weight_XX + V_YY * weight_YY) / _weight
 
         else:
             _weight = data[spw]["weight"][0,:]
