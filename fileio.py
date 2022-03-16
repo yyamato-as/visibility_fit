@@ -20,7 +20,7 @@ def import_ms(msfilename, corr=["I"], export_uvtable=True, filename=None):
     data = {}
     for i in spw:
         ms.selectinit(datadescid=int(i))
-        ms.selectpolarization(corr)
+        #ms.selectpolarization(corr)
         data[i] = ms.getdata(["u" ,"v", "data", "weight", "axis_info"])
         ms.reset()
 
@@ -109,9 +109,7 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
 
     datasize = len(real)
 
-    print(datasize)
-
-    ms.open(outms, nomodify=True)
+    ms.open(outms, nomodify=False)
 
     spw = [key for key in ms.getspectralwindowinfo()]
 
@@ -135,7 +133,7 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
 
         ms.reset()
 
-    ms.close()
+    #ms.close()
 
     spw_array = np.concatenate(spw_array)
 
@@ -144,29 +142,35 @@ def export_ms(basems, outms, real, imag, weight, corr=["I"]):
 
     # put the data for each spectral window
     print("Exporting into {:s}...".format(outms))
-    ms.open(outms, nomodify=False)
+    #ms.open(outms, nomodify=False)
 
     V = real + imag*1.0j
 
     for i in spw:
         print("processing spw="+i)
         ms.selectinit(datadescid=int(i))
-        ms.selectpolarization(corr)
+        #ms.selectpolarization(corr)
 
         rec = ms.getdata(["data", "weight"])
+
+        print(rec["data"].shape, rec["weight"].shape)
 
         v = V[spw_array == int(i)].reshape(nchan[i], -1)
         w = weight[spw_array == int(i)].reshape(nchan[i], -1)
 
         if rec["data"].shape[0] == 2 and rec["data"].ndim == 3:
+            #rec["data"] = np.tile(v, (2, 1, 1))
             rec["data"][0,:,:] = v 
             rec["data"][1,:,:] = v
+            #rec["weight"] = np.tile(np.mean(w, axis=0), (2, 1, 1))
             rec["weight"][0,:] = np.mean(w, axis=0) 
             rec["weight"][1,:] = np.mean(w, axis=0)
 
         else:
-            rec["data"][0,:,:] = v 
+            rec["data"][0,:,:] = v
             rec["weight"][0,:] = np.mean(w, axis=0)
+
+        print(rec["data"].shape, rec["weight"].shape)
 
         ms.putdata(rec)
         ms.reset()
