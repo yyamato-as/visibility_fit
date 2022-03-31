@@ -1,7 +1,7 @@
 ### visibility manipulation/analysis relevant ###
 
 import numpy as np
-from galario.double import get_image_size
+# from galario.double import get_image_size
 import matplotlib.pyplot as plt
 from scipy import stats
 

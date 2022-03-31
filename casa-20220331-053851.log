@@ -1,0 +1,181 @@
+2022-03-31 05:38:51	INFO	::casa	
+2022-03-31 05:38:52	INFO	::casa	CASA Version MODULAR 6.4.3.27
+2022-03-31 05:38:52	INFO	::casa	Can't import casatelemetry module.
+2022-03-31 05:38:52	INFO	split::::casa	##########################################
+2022-03-31 05:38:52	INFO	split::::casa	##### Begin Task: split              #####
+2022-03-31 05:38:52	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='30s', combine='' )
+2022-03-31 05:38:52	INFO	split::::casa	Parse time averaging parameters
+2022-03-31 05:38:52	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.ms
+2022-03-31 05:38:52	INFO	MSTransformManager::parseMsSpecParams	Data column is DATA
+2022-03-31 05:38:52	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms
+2022-03-31 05:38:52	INFO	MSTransformManager::parseTimeAvgParams	Time average is activated
+2022-03-31 05:38:52	INFO	MSTransformManager::parseTimeAvgParams	Time bin is 30 seconds
+2022-03-31 05:38:52	INFO	MSTransformManager::colCheckInfo	Adding DATA column to output MS from input DATA column
+2022-03-31 05:38:52	INFO	MSTransformManager::open	Select data
+2022-03-31 05:38:52	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-03-31 05:38:53	INFO	MSTransformDataHandler::makeSelection	1032286 out of 1589070 rows are going to be considered due to the selection criteria.
+2022-03-31 05:39:14	INFO	split::::casa	Task split complete. Start time: 2022-03-31 14:38:51.709689 End time: 2022-03-31 14:39:14.101074
+2022-03-31 05:39:14	INFO	split::::casa	##### End Task: split                #####
+2022-03-31 05:39:14	INFO	split::::casa	##########################################
+2022-03-31 05:39:14	INFO	split::::casa	##########################################
+2022-03-31 05:39:14	INFO	split::::casa	##### Begin Task: split              #####
+2022-03-31 05:39:14	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='30s', combine='' )
+2022-03-31 05:39:14	INFO	split::::casa	Parse time averaging parameters
+2022-03-31 05:39:14	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.ms
+2022-03-31 05:39:14	INFO	MSTransformManager::parseMsSpecParams	Data column is DATA
+2022-03-31 05:39:14	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms
+2022-03-31 05:39:14	INFO	MSTransformManager::parseTimeAvgParams	Time average is activated
+2022-03-31 05:39:14	INFO	MSTransformManager::parseTimeAvgParams	Time bin is 30 seconds
+2022-03-31 05:39:14	INFO	MSTransformManager::colCheckInfo	Adding DATA column to output MS from input DATA column
+2022-03-31 05:39:14	INFO	MSTransformManager::open	Select data
+2022-03-31 05:39:14	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-03-31 05:39:15	INFO	MSTransformDataHandler::makeSelection	1163125 out of 1390620 rows are going to be considered due to the selection criteria.
+2022-03-31 05:39:38	INFO	split::::casa	Task split complete. Start time: 2022-03-31 14:39:14.212938 End time: 2022-03-31 14:39:37.865900
+2022-03-31 05:39:38	INFO	split::::casa	##### End Task: split                #####
+2022-03-31 05:39:38	INFO	split::::casa	##########################################
+2022-03-31 05:39:38	INFO	split::::casa	##########################################
+2022-03-31 05:39:38	INFO	split::::casa	##### Begin Task: split              #####
+2022-03-31 05:39:38	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB1_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB1_continuum.bin_30s.ms', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='30s', combine='' )
+2022-03-31 05:39:38	INFO	split::::casa	Parse time averaging parameters
+2022-03-31 05:39:38	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB1_continuum.ms
+2022-03-31 05:39:38	INFO	MSTransformManager::parseMsSpecParams	Data column is DATA
+2022-03-31 05:39:38	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB1_continuum.bin_30s.ms
+2022-03-31 05:39:38	INFO	MSTransformManager::parseTimeAvgParams	Time average is activated
+2022-03-31 05:39:38	INFO	MSTransformManager::parseTimeAvgParams	Time bin is 30 seconds
+2022-03-31 05:39:38	INFO	MSTransformManager::colCheckInfo	Adding DATA column to output MS from input DATA column
+2022-03-31 05:39:38	INFO	MSTransformManager::open	Select data
+2022-03-31 05:39:38	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-03-31 05:39:44	INFO	MSTransformDataHandler::makeSelection	6058605 out of 6396852 rows are going to be considered due to the selection criteria.
+2022-03-31 05:41:35	INFO	split::::casa	Task split complete. Start time: 2022-03-31 14:39:38.017726 End time: 2022-03-31 14:41:34.539862
+2022-03-31 05:41:35	INFO	split::::casa	##### End Task: split                #####
+2022-03-31 05:41:35	INFO	split::::casa	##########################################
+2022-03-31 05:41:35	INFO	split::::casa	##########################################
+2022-03-31 05:41:35	INFO	split::::casa	##### Begin Task: split              #####
+2022-03-31 05:41:35	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.bin_30s.ms', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='30s', combine='' )
+2022-03-31 05:41:35	INFO	split::::casa	Parse time averaging parameters
+2022-03-31 05:41:35	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.ms
+2022-03-31 05:41:35	INFO	MSTransformManager::parseMsSpecParams	Data column is DATA
+2022-03-31 05:41:35	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.bin_30s.ms
+2022-03-31 05:41:35	INFO	MSTransformManager::parseTimeAvgParams	Time average is activated
+2022-03-31 05:41:35	INFO	MSTransformManager::parseTimeAvgParams	Time bin is 30 seconds
+2022-03-31 05:41:35	INFO	MSTransformManager::colCheckInfo	Adding DATA column to output MS from input DATA column
+2022-03-31 05:41:35	INFO	MSTransformManager::open	Select data
+2022-03-31 05:41:35	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-03-31 05:41:41	INFO	MSTransformDataHandler::makeSelection	6977838 out of 7309722 rows are going to be considered due to the selection criteria.
+2022-03-31 05:43:59	INFO	split::::casa	Task split complete. Start time: 2022-03-31 14:41:34.697655 End time: 2022-03-31 14:43:58.571416
+2022-03-31 05:43:59	INFO	split::::casa	##### End Task: split                #####
+2022-03-31 05:43:59	INFO	split::::casa	##########################################
+2022-03-31 05:43:59	INFO	concat::::casa	##########################################
+2022-03-31 05:43:59	INFO	concat::::casa	##### Begin Task: concat             #####
+2022-03-31 05:43:59	INFO	concat::::casa	concat( vis=['/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms', '/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms', '/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB1_continuum.bin_30s.ms', '/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.bin_30s.ms'], concatvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms', freqtol='', dirtol='0.01arcsec', respectname=False, timesort=False, copypointing=True, visweightscale=[], forcesingleephemfield='' )
+2022-03-31 05:43:59	INFO	concat::::casa	The list of input MSs is not in chronological order and will need to be sorted.
+2022-03-31 05:43:59	INFO	concat::::casa	The chronological order in which the concatenation will take place is:
+2022-03-31 05:43:59	INFO	concat::::casa	   MJD 59446.33089055556: /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB1_continuum.bin_30s.ms
+2022-03-31 05:43:59	INFO	concat::::casa	   MJD 59446.40293333334: /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.bin_30s.ms
+2022-03-31 05:43:59	INFO	concat::::casa	   MJD 59551.134715555556: /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms
+2022-03-31 05:43:59	INFO	concat::::casa	   MJD 59564.15355333333: /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms
+2022-03-31 05:43:59	INFO	concat::::casa	copying /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB1_continuum.bin_30s.ms to /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms
+2022-03-31 05:44:00	INFO	concat::::casa	concatenating /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.bin_30s.ms into /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms
+2022-03-31 05:44:00	INFO	MSConcat::concatenate 	Appending /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_LB2_continuum.bin_30s.ms to /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms
+2022-03-31 05:44:00	INFO	MSConcat::concatenate 	Added 0 rows and matched 1 from the state subtable
+2022-03-31 05:44:00	INFO	MSConcat::concatenate 	Added 7 rows to the source subtable
+2022-03-31 05:44:00	INFO	MSConcat::concatenate 	Added 7 rows and matched 0 from the data description subtable
+2022-03-31 05:44:00	INFO	MSConcat::concatenate 	Added 7 rows and matched 0 from the spectral window subtable
+2022-03-31 05:44:00	INFO	MSConcat::concatenate 	Added 3 rows and matched 43 from the antenna subtable
+2022-03-31 05:44:00	INFO	MSConcat::concatenate +	Added 322 rows to the feed subtable
+2022-03-31 05:44:00	INFO	MSConcat::concatenate +	Added 0 rows and matched 1 from the field subtable
+2022-03-31 05:44:00	INFO	MSConcat::copyObservation	Added 1 rows and matched 0 rows in the observation subtable.
+2022-03-31 05:44:00	INFO	MSConcat::copyProcessor	Added 0 rows and matched 4 rows in the processor subtable.
+2022-03-31 05:45:14	INFO	MSConcat::copySysCal	No valid syscal tables present. Result won't have one either.
+2022-03-31 05:45:14	INFO	MSConcat::copyGainCurve	No valid gain curve tables present. Result won't have one either.
+2022-03-31 05:45:14	INFO	MSConcat::concatenate 	Will offset scan numbers by 125 for observations with Obs ID 1 in order to make scan numbers unique.
+2022-03-31 05:45:24	INFO	concat::::casa	concatenating /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms into /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms
+2022-03-31 05:45:24	INFO	MSConcat::concatenate 	Appending /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms to /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms
+2022-03-31 05:45:24	INFO	MSConcat::concatenate 	Added 0 rows and matched 1 from the state subtable
+2022-03-31 05:45:24	INFO	MSConcat::concatenate 	Added 7 rows to the source subtable
+2022-03-31 05:45:24	INFO	MSConcat::concatenate 	Added 7 rows and matched 0 from the data description subtable
+2022-03-31 05:45:24	INFO	MSConcat::concatenate 	Added 7 rows and matched 0 from the spectral window subtable
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA41 (station A058, ID 0) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A073 and will have ID 46.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA42 (station A043, ID 1) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A047 and will have ID 47.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA46 (station A132, ID 5) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A016 and will have ID 48.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA48 (station S306, ID 7) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A076 and will have ID 49.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA49 (station A125, ID 8) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A096 and will have ID 50.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA51 (station W207, ID 10) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A070 and will have ID 51.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA52 (station A082, ID 11) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A089 and will have ID 52.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA54 (station S301, ID 13) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A068 and will have ID 53.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA58 (station A118, ID 14) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A045 and will have ID 57.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA60 (station A085, ID 16) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A042 and will have ID 58.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA62 (station W210, ID 18) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A066 and will have ID 59.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA65 (station A131, ID 21) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A062 and will have ID 60.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV01 (station A127, ID 22) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A033 and will have ID 61.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV02 (station A129, ID 23) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A022 and will have ID 62.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV06 (station A130, ID 25) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A024 and will have ID 65.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV13 (station A090, ID 32) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A092 and will have ID 66.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV16 (station W205, ID 35) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A090 and will have ID 67.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV18 (station A075, ID 36) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A083 and will have ID 69.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV20 (station P404, ID 38) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A060 and will have ID 70.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV21 (station P410, ID 39) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A015 and will have ID 71.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV22 (station A086, ID 40) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A082 and will have ID 72.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV25 (station A133, ID 42) has changed its position between MSs.
+2022-03-31 05:45:24	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A011 and will have ID 74.
+2022-03-31 05:45:24	INFO	MSConcat::concatenate 	Added 29 rows and matched 17 from the antenna subtable
+2022-03-31 05:45:24	INFO	MSConcat::concatenate +	Added 322 rows to the feed subtable
+2022-03-31 05:45:24	INFO	MSConcat::concatenate +	Added 0 rows and matched 1 from the field subtable
+2022-03-31 05:45:24	INFO	MSConcat::concatenate 	Consolidated Source IDs in the source subtable.
+2022-03-31 05:45:24	INFO	MSConcat::copyObservation	Added 1 rows and matched 0 rows in the observation subtable.
+2022-03-31 05:45:24	INFO	MSConcat::copyProcessor	Added 0 rows and matched 4 rows in the processor subtable.
+2022-03-31 05:46:27	INFO	MSConcat::copySysCal	No valid syscal tables present. Result won't have one either.
+2022-03-31 05:46:27	INFO	MSConcat::copyGainCurve	No valid gain curve tables present. Result won't have one either.
+2022-03-31 05:46:27	INFO	MSConcat::concatenate 	Will offset scan numbers by 248 for observations with Obs ID 2 in order to make scan numbers unique.
+2022-03-31 05:46:30	INFO	concat::::casa	concatenating /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms into /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms
+2022-03-31 05:46:30	INFO	MSConcat::concatenate 	Appending /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms to /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_continuum.ms
+2022-03-31 05:46:30	INFO	MSConcat::concatenate 	Added 0 rows and matched 1 from the state subtable
+2022-03-31 05:46:30	INFO	MSConcat::concatenate 	Added 7 rows to the source subtable
+2022-03-31 05:46:30	INFO	MSConcat::concatenate 	Added 7 rows and matched 0 from the data description subtable
+2022-03-31 05:46:30	INFO	MSConcat::concatenate 	Added 7 rows and matched 0 from the spectral window subtable
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA55 (station A122, ID 54) has changed its position between MSs.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A043 and will have ID 75.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA57 (station A043, ID 56) has changed its position between MSs.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A001 and will have ID 76.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA59 (station P409, ID 15) has changed its position between MSs.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A075 and will have ID 77.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DA64 (station A115, ID 20) has changed its position between MSs.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A058 and will have ID 78.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV04 (station W208, ID 24) has changed its position between MSs.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A007 and will have ID 79.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV12 (station A120, ID 31) has changed its position between MSs.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A044 and will have ID 80.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed	*** Antenna DV24 (station A128, ID 41) has changed its position between MSs.
+2022-03-31 05:46:30	INFO	MSConcat::copyAntennaAndFeed+	    Moved antenna is on station A008 and will have ID 81.
+2022-03-31 05:46:30	INFO	MSConcat::concatenate 	Added 7 rows and matched 36 from the antenna subtable
+2022-03-31 05:46:30	INFO	MSConcat::concatenate +	Added 252 rows to the feed subtable
+2022-03-31 05:46:30	INFO	MSConcat::concatenate +	Added 0 rows and matched 1 from the field subtable
+2022-03-31 05:46:30	INFO	MSConcat::copyObservation	Added 1 rows and matched 0 rows in the observation subtable.
+2022-03-31 05:46:30	INFO	MSConcat::copyProcessor	Added 0 rows and matched 4 rows in the processor subtable.
+2022-03-31 05:47:28	INFO	MSConcat::copySysCal	No valid syscal tables present. Result won't have one either.
+2022-03-31 05:47:28	INFO	MSConcat::copyGainCurve	No valid gain curve tables present. Result won't have one either.
+2022-03-31 05:47:28	INFO	MSConcat::concatenate 	Will offset scan numbers by 277 for observations with Obs ID 3 in order to make scan numbers unique.
+2022-03-31 05:47:31	INFO	concat::::casa	Task concat complete. Start time: 2022-03-31 14:43:58.989207 End time: 2022-03-31 14:47:31.397940
+2022-03-31 05:47:31	INFO	concat::::casa	##### End Task: concat               #####
+2022-03-31 05:47:31	INFO	concat::::casa	##########################################

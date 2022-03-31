@@ -1,0 +1,29 @@
+2022-03-30 16:17:47	INFO	::casa	
+2022-03-30 16:17:47	INFO	::casa	CASA Version MODULAR 6.4.3.27
+2022-03-30 16:17:47	INFO	::casa	Can't import casatelemetry module.
+2022-03-30 16:17:47	INFO	split::::casa	##########################################
+2022-03-30 16:17:47	INFO	split::::casa	##### Begin Task: split              #####
+2022-03-30 16:17:47	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='30s', combine='state,scan' )
+2022-03-30 16:17:47	INFO	split::::casa	Parse time averaging parameters
+2022-03-30 16:17:47	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.ms
+2022-03-30 16:17:47	INFO	MSTransformManager::parseMsSpecParams	Data column is DATA
+2022-03-30 16:17:47	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms
+2022-03-30 16:17:47	INFO	MSTransformManager::parseTimeAvgParams	Time average is activated
+2022-03-30 16:17:47	INFO	MSTransformManager::parseTimeAvgParams	Time bin is 30 seconds
+2022-03-30 16:17:47	INFO	MSTransformManager::parseTimeAvgParams	Time span is state,scan
+2022-03-30 16:17:47	INFO	MSTransformManager::colCheckInfo	Adding DATA column to output MS from input DATA column
+2022-03-30 16:17:47	INFO	MSTransformManager::open	Select data
+2022-03-30 16:17:47	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-03-30 16:17:48	INFO	MSTransformDataHandler::makeSelection	1032286 out of 1589070 rows are going to be considered due to the selection criteria.
+2022-03-30 16:17:49	INFO	MSTransformManager::setIterationApproach	Combining data through scans for time average 
+2022-03-30 16:17:49	INFO	MSTransformManager::setIterationApproach	Combining data through state for time average
+2022-03-30 16:18:10	INFO	split::::casa	Task split complete. Start time: 2022-03-31 01:17:47.317981 End time: 2022-03-31 01:18:09.900778
+2022-03-30 16:18:10	INFO	split::::casa	##### End Task: split                #####
+2022-03-30 16:18:10	INFO	split::::casa	##########################################
+2022-03-30 16:18:10	INFO	split::::casa	##########################################
+2022-03-30 16:18:10	INFO	split::::casa	##### Begin Task: split              #####
+2022-03-30 16:18:10	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='30s', combine='state,scan' )
+2022-03-30 16:18:10	SEVERE	split::::casa	Task split raised an exception of class OSError with the following message: Output MS /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB2_continuum.bin_30s.ms already exists - will not overwrite it.
+2022-03-30 16:18:10	INFO	split::::casa	Task split complete. Start time: 2022-03-31 01:18:09.904229 End time: 2022-03-31 01:18:09.904395
+2022-03-30 16:18:10	INFO	split::::casa	##### End Task: split                #####
+2022-03-30 16:18:10	INFO	split::::casa	##########################################

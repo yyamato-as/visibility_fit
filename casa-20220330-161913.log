@@ -1,0 +1,10 @@
+2022-03-30 16:19:14	INFO	::casa	
+2022-03-30 16:19:14	INFO	::casa	CASA Version MODULAR 6.4.3.27
+2022-03-30 16:19:14	INFO	::casa	Can't import casatelemetry module.
+2022-03-30 16:19:14	INFO	split::::casa	##########################################
+2022-03-30 16:19:14	INFO	split::::casa	##### Begin Task: split              #####
+2022-03-30 16:19:14	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='30s', combine='state,scan' )
+2022-03-30 16:19:14	SEVERE	split::::casa	Task split raised an exception of class OSError with the following message: Output MS /raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/L1489IRS_SB1_continuum.bin_30s.ms already exists - will not overwrite it.
+2022-03-30 16:19:14	INFO	split::::casa	Task split complete. Start time: 2022-03-31 01:19:14.021003 End time: 2022-03-31 01:19:14.021185
+2022-03-30 16:19:14	INFO	split::::casa	##### End Task: split                #####
+2022-03-30 16:19:14	INFO	split::::casa	##########################################

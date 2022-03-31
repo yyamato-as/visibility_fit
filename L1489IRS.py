@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from galario.double import sampleProfile
+from fileio import import_ms, export_ms
 from uvanalysis_utils import set_grid, plot_uv, deproject_vis, bin_vis
 from mcmc_utils import setup_params, log_prior, run_emcee, plot_walker
 from imageanalysis_utils import Gaussian1d, GaussianRing1d
@@ -8,6 +9,7 @@ import astropy.constants as ac
 import astropy.units as units
 import pickle
 import corner
+import multiprocessing
 
 c = ac.c.to(units.m / units.s).value
 pi = np.pi
@@ -41,7 +43,9 @@ source = "L1489IRS"
 
 
 # model function derived from image fit
-model_name = "PointSource_GaussianRing_Gaussian"
+model_name = "PointSource_GaussianRing_Gaussian_longrun"
+
+
 def model_func_1d(r, F_c, sigma_c, r0_r, F_r, sigma_r, F_b, sigma_b):
     return (
         Gaussian1d(r, F_c, sigma_c)
@@ -71,10 +75,24 @@ param_dict = {
 
 ########## load the visibility and define various functions for MCMC ##########
 # load the visibility
+print("Loading visibility data...")
 datafilepath = "/raid/work/yamato/edisk_data/analysis_data/"
 uvtabfilename = datafilepath + "L1489IRS_continuum.uvtab"
 visibility = np.loadtxt(uvtabfilename, unpack=True)
 u, v, real, imag, weight = np.ascontiguousarray(visibility)
+print("Done.")
+
+
+# datafilepath = "/raid/work/yamato/edisk_data/edisk_calibrated_data/"
+# uvtabfilename = datafilepath + "L1489IRS_continuum.bin_30s.ms.uvtab"
+# visibility = np.loadtxt(uvtabfilename, unpack=True)
+# u, v, real, imag, weight, freqs = np.ascontiguousarray(visibility)
+# print("Done.")
+
+# datafilepath = "/raid/work/yamato/edisk_data/edisk_calibrated_data/"
+# msfilename = datafilepath + "L1489IRS_continuum.bin_30s.ms"
+# u, v, real, imag, weight, freqs = import_ms(msfilename)
+
 
 # get gridding parameters
 nxy, dxy, r, rmin, dr = set_grid(u, v)
@@ -147,27 +165,26 @@ def log_probability(param):
 
 
 ################### Actual MCMC run ###########################
-nwalker = 32
-nstep = 5000
-progress = True
+# nwalker = 32
+# nstep = 5000
+# progress = True
 
-import multiprocessing
 
-with multiprocessing.Pool(processes=8) as pool:
-    # pool = None
-    sampler = run_emcee(
-        log_probability=log_probability,
-        initial_state=initial_state,
-        nwalker=nwalker,
-        nstep=nstep,
-        pool=pool,
-        progress=progress,
-        # nthreads=8
-    )
+# with multiprocessing.Pool(processes=8) as pool:
+#     # pool = None
+#     sampler = run_emcee(
+#         log_probability=log_probability,
+#         initial_state=initial_state,
+#         nwalker=nwalker,
+#         nstep=nstep,
+#         pool=pool,
+#         progress=progress,
+#         # nthreads=8
+#     )
 
-# save the EmsambleSampler object into a pickle
-with open(datafilepath + "L1489IRS_continuum_sampler_.pkl", "wb") as f:
-    pickle.dump(sampler, f, protocol=pickle.HIGHEST_PROTOCOL)
+# # save the EmsambleSampler object into a pickle
+# with open(datafilepath + "L1489IRS_continuum_sampler_.pkl", "wb") as f:
+#     pickle.dump(sampler, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 ################################################################
 
@@ -183,9 +200,12 @@ with open(datafilepath + "L1489IRS_continuum_sampler_.pkl", "wb") as f:
 # thin = int(tau / 2)
 
 # load back the EnsambleSampler
-# import pickle
-# with open(datafilepath + "L1489IRS_continuum_sampler_threeGaussian_5000step.pkl", "rb") as f:
-#     sampler = pickle.load(f)
+import pickle
+
+with open(
+    "L1489IRS_continuum_sampler_threeGaussian_5000step.pkl", "rb"
+) as f:
+    sampler = pickle.load(f)
 
 # get the flatted and discarded sample
 nburnin = 2000
@@ -216,6 +236,8 @@ param_dict.update({name: param_dict[name]["p0"] for name in fixed_param_name})
 
 # get the visibility for MAP model
 MAP_vis = sample_vis(param_dict.copy())
+
+np.save("./L1489IRS_continuum_PointSource_GaussianRing_Gaussian_MAP_vis.npy", MAP_vis)
 
 # real/imag vs. baseline plot for observe values
 model_fig = plot_uv(
@@ -256,14 +278,13 @@ model_fig.axes[1].set(ylim=(-0.0055, 0.0055), xlim=(0, 5000))
 # plt.show()
 
 
-
 ################## save the figures into a directory #####################
 import subprocess
 
 
 figpath = "./fig_{:s}_{:s}".format(source, model_name)
 subprocess.run(["mkdir", figpath])
-corner_fig.savefig(figpath+"corner.png", bbox_inches="tight", dpi=300)
+corner_fig.savefig(figpath + "corner.png", bbox_inches="tight", dpi=300)
 for i, fig in enumerate(walker_figs):
     fig.savefig(
         figpath + "walker_{}.png".format(param_name[i]),

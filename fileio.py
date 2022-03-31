@@ -50,6 +50,7 @@ def import_ms(msfilename, export_uvtable=True, filename=None):
     freqs = []
 
     for spw in data.keys():
+        print(spw, data[spw]["data"].shape)
         
         # average over polarization
         if data[spw]["data"].shape[0] == 2:
