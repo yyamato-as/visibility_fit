@@ -9,6 +9,68 @@ c = ac.c.to(u.m/u.s).value
 tb = casatools.table()
 ms = casatools.ms()
 
+def import_mms(vislist, export_uvtable=False, filename=None):
+    """Import the visibility from multiple CASA measurement sets as 1D arrays using casatools. 
+
+    Parameters
+    ----------
+    msfilename : str
+        The measurement set filename which you want to import.
+    export_uvtable : bool, optional
+        If write the output into a text file (similar to UVTable), by default True
+    filename : str or None, optional
+        The filename of output text file, by default None. Relevant only when export_uvtable=True.
+
+    Returns
+    -------
+    u, v, real, imag, weight, freqs: six 1D numpy arrays
+        visibility
+    """
+
+    print("Will import {}...".format(vislist))
+
+    u = []
+    v = []
+    real = []
+    imag = []
+    weight = []
+    freqs = []
+
+    for vis in vislist:
+        _u, _v, _real, _imag, _weight, _freqs = import_ms(vis, export_uvtable=False)
+        u.append(_u)
+        v.append(_v)
+        real.append(_real)
+        imag.append(_imag)
+        weight.append(_weight)
+        freqs.append(_freqs)
+
+    # concatenate 
+    u = np.ascontiguousarray(np.concatenate(u))
+    v = np.ascontiguousarray(np.concatenate(v))
+    real = np.ascontiguousarray(np.concatenate(real))
+    imag = np.ascontiguousarray(np.concatenate(imag))
+    weight = np.ascontiguousarray(np.concatenate(weight))
+    freqs = np.ascontiguousarray(np.concatenate(freqs))
+
+    print("Done.")
+
+    if export_uvtable:
+        if filename is None:
+            filename = "output.uvtab"
+
+        np.savetxt(
+            filename,
+            np.column_stack([u, v, real, imag, weight, freqs]),
+            fmt="%10.6e",
+            delimiter="\t",
+            header="u [lambda]\t v [lambda]\t real [Jy] \t imag [Jy]\t weight \t nu [Hz]",
+        )
+
+    return u, v, real, imag, weight, freqs
+
+
+
 def import_ms(msfilename, export_uvtable=True, filename=None):
     """Import the visibility from a CASA measurement set as 1D arrays using casatools. 
 
@@ -23,9 +85,12 @@ def import_ms(msfilename, export_uvtable=True, filename=None):
 
     Returns
     -------
-    u, v, real, imag, weight, freqs: six 1D numpy array
+    u, v, real, imag, weight, freqs: six 1D numpy arrays
         visibility
     """
+
+    ### remove flagged data just in case
+
 
     ms.open(msfilename)
 
@@ -37,7 +102,7 @@ def import_ms(msfilename, export_uvtable=True, filename=None):
     for i in spw:
         ms.selectinit(datadescid=int(i))
         #ms.selectpolarization(corr)
-        data[i] = ms.getdata(["u" ,"v", "data", "weight", "axis_info"])
+        data[i] = ms.getdata(["u" ,"v", "data", "weight", "axis_info", "flag"])
         ms.reset()
 
     ms.close()
@@ -50,20 +115,24 @@ def import_ms(msfilename, export_uvtable=True, filename=None):
     freqs = []
 
     for spw in data.keys():
-        print(spw, data[spw]["data"].shape)
+        print("spw" + spw, data[spw]["data"].shape)
         
         # average over polarization
         if data[spw]["data"].shape[0] == 2:
-            V_XX = data[spw]["data"][0,:,:]
-            V_YY = data[spw]["data"][1,:,:]
-            weight_XX = data[spw]["weight"][0,:]
-            weight_YY = data[spw]["weight"][1,:]
-            _weight = weight_XX + weight_YY
-            _V = (V_XX * weight_XX + V_YY * weight_YY) / _weight
+            _V = np.sum(data[spw]["data"]*data[spw]["weight"][:,None,:], axis=0) / np.sum(data[spw]["weight"], axis=0)
+            _weight = np.sum(data[spw]["weight"], axis=0)
+            good = np.any(data[spw]["flag"], axis=0) == False
+            # V_XX = data[spw]["data"][0,:,:]
+            # V_YY = data[spw]["data"][1,:,:]
+            # weight_XX = data[spw]["weight"][0,:]
+            # weight_YY = data[spw]["weight"][1,:]
+            # _weight = weight_XX + weight_YY
+            # _V = (V_XX * weight_XX + V_YY * weight_YY) / _weight
 
         else:
-            _weight = data[spw]["weight"][0,:]
-            _V = data[spw]["data"][0,:]
+            _weight = data[spw]["weight"].squeeze()
+            _V = data[spw]["data"].squeeze()
+            good = data[spw]["flag"] == False
 
         nchan, nuv = _V.shape
         _freqs = data[spw]["axis_info"]["freq_axis"]["chan_freq"]
@@ -73,6 +142,13 @@ def import_ms(msfilename, export_uvtable=True, filename=None):
         _u = np.tile(data[spw]["u"], (nchan, 1)) / _wles # in lmabda
         _v = np.tile(data[spw]["v"], (nchan, 1)) / _wles # in lambda
         _weight = np.tile(_weight, (nchan, 1))
+
+        # remove flagged data
+        _u = _u[good]
+        _v = _v[good]
+        _V = _V[good]
+        _weight = _weight[good]
+        _freqs = _freqs[good]
 
         # remove the autocorrelation; here all the variables are flattened
         # -> but this removement causes an issue if you want the model visibility to get back the original ms file after fitting... so quit

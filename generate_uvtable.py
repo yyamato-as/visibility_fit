@@ -8,7 +8,7 @@ incl, PA = 73, 69
 
 
 msfilepath = "/raid/work/yamato/edisk_data/edisk_calibrated_data/DDT_LP/"
-array_config = ["SB1", "SB2", "LB1", "LB2"]
+array_config = ["LB1", "LB2"]
 msfilelist = [
     msfilepath + "L1489IRS_{:s}_continuum.ms".format(ac) for ac in array_config
 ]

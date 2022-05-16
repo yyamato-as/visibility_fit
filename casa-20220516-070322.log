@@ -1,0 +1,32 @@
+2022-05-16 07:03:22	INFO	::casa	
+2022-05-16 07:03:24	INFO	::casa	Python version 3.8.12
+2022-05-16 07:03:24	INFO	::casa	CASA Version MODULAR 6.4.4.31
+2022-05-16 07:03:24	INFO	::casa	Can't import casatelemetry module.
+2022-05-16 07:04:50	INFO	split::::casa	##########################################
+2022-05-16 07:04:50	INFO	split::::casa	##### Begin Task: split              #####
+2022-05-16 07:04:50	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms.split_1chanPerSpw', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='corrected', keepflags=True, width=1, timebin='0s', combine='' )
+2022-05-16 07:04:50	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms
+2022-05-16 07:04:50	INFO	MSTransformManager::parseMsSpecParams	Data column is CORRECTED
+2022-05-16 07:04:50	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms.split_1chanPerSpw
+2022-05-16 07:04:50	WARN	MSTransformManager::checkDataColumnsToFill	CORRECTED_DATA column requested but not available in input MS 
+2022-05-16 07:04:50	INFO	MSTransformManager::open	Select data
+2022-05-16 07:04:50	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-05-16 07:04:50	SEVERE	split::::casa	Task split raised an exception of class RuntimeError with the following message: Desired column (CORRECTED_DATA) not found in the input MS (/raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms).
+2022-05-16 07:04:50	INFO	split::::casa	Task split complete. Start time: 2022-05-16 16:04:49.750187 End time: 2022-05-16 16:04:50.025891
+2022-05-16 07:04:50	INFO	split::::casa	##### End Task: split                #####
+2022-05-16 07:04:50	INFO	split::::casa	##########################################
+2022-05-16 07:06:08	INFO	split::::casa	##########################################
+2022-05-16 07:06:08	INFO	split::::casa	##### Begin Task: split              #####
+2022-05-16 07:06:08	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms.split_1chanPerSpw', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=True, width=[2, 2, 2, 2, 2, 64], timebin='0s', combine='' )
+2022-05-16 07:06:08	INFO	split::::casa	Parse channel averaging parameters
+2022-05-16 07:06:08	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms
+2022-05-16 07:06:08	INFO	MSTransformManager::parseMsSpecParams	Data column is DATA
+2022-05-16 07:06:08	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data_old/archive_LP/L1489IRS_SB1_continuum.ms.split_1chanPerSpw
+2022-05-16 07:06:08	INFO	MSTransformManager::parseChanAvgParams	Channel average is activated
+2022-05-16 07:06:08	INFO	MSTransformManager::parseChanAvgParams	Channel bin is [2, 2, 2, 2, 2, 64]
+2022-05-16 07:06:08	INFO	MSTransformManager::colCheckInfo	Adding DATA column to output MS from input DATA column
+2022-05-16 07:06:08	INFO	MSTransformManager::open	Select data
+2022-05-16 07:06:08	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-05-16 07:06:23	INFO	split::::casa	Task split complete. Start time: 2022-05-16 16:06:07.815062 End time: 2022-05-16 16:06:23.350513
+2022-05-16 07:06:23	INFO	split::::casa	##### End Task: split                #####
+2022-05-16 07:06:23	INFO	split::::casa	##########################################

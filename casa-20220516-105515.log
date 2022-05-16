@@ -1,0 +1,17 @@
+2022-05-16 10:55:16	INFO	::casa	
+2022-05-16 10:55:16	INFO	::casa	Python version 3.8.12
+2022-05-16 10:55:16	INFO	::casa	CASA Version MODULAR 6.4.4.31
+2022-05-16 10:55:16	INFO	::casa	Can't import casatelemetry module.
+2022-05-16 10:56:25	INFO	split::::casa	##########################################
+2022-05-16 10:56:25	INFO	split::::casa	##### Begin Task: split              #####
+2022-05-16 10:56:25	INFO	split::::casa	split( vis='/raid/work/yamato/edisk_data/edisk_calibrated_data_old/DDT_LP/L1489IRS_SB1_continuum.ms', outputvis='/raid/work/yamato/edisk_data/edisk_calibrated_data_old/DDT_LP/L1489IRS_SB1_continuum.ms.split_keepflagsFalse', keepmms=True, field='', spw='', scan='', antenna='', correlation='', timerange='', intent='', array='', uvrange='', observation='', feed='', datacolumn='data', keepflags=False, width=1, timebin='0s', combine='' )
+2022-05-16 10:56:25	INFO	MSTransformManager::parseMsSpecParams	Input file name is /raid/work/yamato/edisk_data/edisk_calibrated_data_old/DDT_LP/L1489IRS_SB1_continuum.ms
+2022-05-16 10:56:25	INFO	MSTransformManager::parseMsSpecParams	Data column is DATA
+2022-05-16 10:56:25	INFO	MSTransformManager::parseMsSpecParams	Output file name is /raid/work/yamato/edisk_data/edisk_calibrated_data_old/DDT_LP/L1489IRS_SB1_continuum.ms.split_keepflagsFalse
+2022-05-16 10:56:25	INFO	MSTransformManager::colCheckInfo	Adding DATA column to output MS from input DATA column
+2022-05-16 10:56:25	INFO	MSTransformManager::open	Select data
+2022-05-16 10:56:25	INFO	MSTransformManager::createOutputMSStructure	Create output MS structure
+2022-05-16 10:56:26	INFO	MSTransformDataHandler::makeSelection	1032286 out of 1589070 rows are going to be considered due to the selection criteria.
+2022-05-16 10:56:33	INFO	split::::casa	Task split complete. Start time: 2022-05-16 19:56:25.371249 End time: 2022-05-16 19:56:32.968207
+2022-05-16 10:56:33	INFO	split::::casa	##### End Task: split                #####
+2022-05-16 10:56:33	INFO	split::::casa	##########################################
